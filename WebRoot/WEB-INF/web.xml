@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>cn.cultivator.bbs.filter.FilterEncoding</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/BbsServlet</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>copyRight</filter-name>
+		<filter-class>cn.cultivator.bbs.filter.CopyrightFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>copyRight</filter-name>
+		<url-pattern>/jsp/foot.jsp</url-pattern>
+		<dispatcher>INCLUDE</dispatcher>
+	</filter-mapping>
+	
+	<servlet>
+		<description>
+			This is the description of my J2EE component
+		</description>
+		<display-name>
+			This is the display name of my J2EE component
+		</display-name>
+		<servlet-name>BbsServlet</servlet-name>
+		<servlet-class>
+			cn.cultivator.bbs.servlet.BbsServlet
+		</servlet-class>
+	</servlet>
+	
+	<listener>
+		<display-name>onlineListener</display-name>
+		<listener-class>cn.cultivator.bbs.listener.OnlineListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>cn.cultivator.bbs.listener.AddressListener</listener-class>
+	</listener>
+	
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CopyRightFileter</servlet-name>
+    <servlet-class>cn.cultivator.bbs.filter.CopyRightFileter</servlet-class>
+  </servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>BbsServlet</servlet-name>
+		<url-pattern>/BbsServlet</url-pattern>
+	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CopyRightFileter</servlet-name>
+    <url-pattern>/CopyRightFileter</url-pattern>
+  </servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>welcome.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

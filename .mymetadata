@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="luntan"
+  id="myeclipse.1432190989507"
+  context-root="/luntan"
+  j2ee-spec="1.4"
+  archive="luntan.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
